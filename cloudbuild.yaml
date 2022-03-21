@@ -13,4 +13,4 @@ steps:
       - images/ubuntu/editor/Dockerfile
       - .
 images:
-  - gcr.io/${PROJECT_ID}/unity-ci-docker/android:${SHORT_SHA}
+  - gcr.io/${PROJECT_ID}/unity-ci-docker/android:${SHORT_SHA}-${_UNITY_VERSION}
