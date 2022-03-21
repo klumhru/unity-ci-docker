@@ -1,0 +1,14 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -t
+      - gcr.io/${PROJECT_ID}/unity-ci-docker/android:${SHORT_SHA}-${_UNITY_VERSION}
+      - --build-arg=module=android
+      - --build-arg=version=${_UNITY_VERSION}
+      - --build-arg=changeSet=${_UNITY_CHANGESET}
+      - -f
+      - images/ubuntu/editor/Dockerfile
+      - .
+images:
+  - gcr.io/${PROJECT_ID}/unity-ci-docker/android:${SHORT_SHA}
